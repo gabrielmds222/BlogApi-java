@@ -25,4 +25,9 @@ public class PostController {
     public Post adicionaPost(@RequestBody Post post) {
         return postRepository.save(post);
     }
+
+    @DeleteMapping("/posts/{id}")
+    void deletaPost(@PathVariable Long id) {
+        postRepository.deleteById(id);
+    }
 }
