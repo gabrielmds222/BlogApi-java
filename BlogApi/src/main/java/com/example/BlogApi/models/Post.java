@@ -28,4 +28,12 @@ public class Post {
 
     @Column(name = "preco")
     private BigDecimal preco;
+
+    public BigDecimal getPreco(BigDecimal preco) {
+        return this.preco;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
 }
