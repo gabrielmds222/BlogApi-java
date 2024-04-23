@@ -21,19 +21,8 @@ public class Post {
     private Long Id;
 
     @Column(name = "titulo")
-    private String titulo;
+    private String title;
 
     @Column(name = "descricao")
-    private String descricao;
-
-    @Column(name = "preco")
-    private BigDecimal preco;
-
-    public BigDecimal getPreco(BigDecimal preco) {
-        return this.preco;
-    }
-
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
+    private String description;
 }
