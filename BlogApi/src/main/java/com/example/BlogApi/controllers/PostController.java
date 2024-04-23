@@ -16,33 +16,14 @@ public class PostController {
     PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
-    
+
     @GetMapping("/posts")
     List<Post> all() {
-
         return postRepository.findAll();
     }
 
     @PostMapping("/posts")
-    public Post adicionaPost(@RequestBody Post post) {
-        return postRepository.save(post);
-    }
-
-    @DeleteMapping("/posts/{id}")
-    void deletaPost(@PathVariable Long id) {
-        postRepository.deleteById(id);
-    }
-
-    @PutMapping("/posts/{id}")
-    public ResponseEntity<Post> editaPost(@PathVariable Long id, @RequestBody Post postEditado) {
-        Post editaPost = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("O post não foi encontrado"));
-
-        editaPost.setTitulo(postEditado.getTitulo());
-        editaPost.setDescricao(postEditado.getDescricao());
-        editaPost.getPreco(postEditado.getPreco(postEditado.getPreco()));
-
-        postRepository.save(editaPost);
-
-        return ResponseEntity.ok(editaPost);
+    public Post createNewPost(@RequestBody Post newPost) {
+        return postRepository.save(newPost);
     }
 }

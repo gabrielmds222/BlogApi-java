@@ -9,7 +9,7 @@ public class BlogApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BlogApiApplication.class, args);
 
-		System.out.println("Rodando");
+		System.out.println("Servidor rodando");
 	}
 
 }
